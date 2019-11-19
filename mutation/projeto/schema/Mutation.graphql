@@ -1,8 +1,13 @@
 type Mutation {
     # Virgula opcional
     novoUsuario(
-        nome:String,
-        email: String,
-        idade: Int
+        dados: UsuarioInput!
     ): Usuario!
+
+    excluirUsuario(filtro: UsuarioFiltro): Usuario
+
+    alterarUsuario(
+        filtro: UsuarioFiltro
+        dados: UsuarioInput
+    ): Usuario
 }
